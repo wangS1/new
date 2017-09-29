@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拥有</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: url(img/timg.jpg) no-repeat;
+        }
+        html{
+            font-family: "楷体";
+            /*position: relative;*/
+        }
+        strong{
+            font-size: 20px;
+            transition: 1s;
+            color: transparent;
+            text-shadow: 0 0 100px rgba(255,255,255,0);
+        }
+        .show{
+            text-shadow: 0 0 0 rgba(255,255,255,0.8);
+        }
+        #box{
+            margin: 2rem auto;
+            height:50px;
+            width:60%;
+        }
+        #video{
+            background: none;
+        }
+        .swiper-wrapper{
+            display: flex;
+            justify-content: space-between;
+        }
+        .swiper-slide{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide img{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-container {
+            width: 260px;
+            height:260px;
+            margin-top: 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+        }
+        #ps{
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 0 rgba(255,255,255,0.8);
+            color:#fff;
+            padding:0 0.5rem;
+        }
+        footer {
+            padding: 1rem;
+            color:#fff;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(img/e.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(img/f.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(img/d.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(img/b.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(img/a.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(img/f.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(img/g.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(img/a3.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(img/a1.jpg)"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </main>
+    <div id="box"></div>
+
+        <p id="ps">我知道爱要自由才能快乐，我却宁愿留在你身边，陪你，陪你走过</p>
+    <footer>
+        <span>阿丽:</span><br/>
+        <div style="padding:0 2.5rem">
+            <span>陪</span>
+            <p>伴</p>
+        </div>
+        <ul style="padding:0 3.5rem">
+            <li>是</li>
+            <li>最</li>
+            <li>长</li>
+            <li>情</li>
+            <li>的</li>
+            <li>告</li>
+            <li style="display: flex;justify-content: space-between"><span>白</span><span>————卫超❤阿丽</span></li>
+        </ul>
+    </footer>
+
+<script src="js/swiper.min.js"></script>
+<script>
+  var str = '世间本无沙漠，我每想你一次，上帝就落下一粒沙，从此便有了撒哈拉！';
+  var oBox = document.getElementById("box")
+  for(var i = 0;i<str.length;i++){
+    var span = document.createElement('strong');
+    span.innerHTML = str.charAt(i);
+    oBox.appendChild(span);
+  }
+
+  //获取span
+  var aSpan = document.getElementsByTagName('strong');
+  //创建计数器
+  var count = 0;
+  setInterval(function () {
+    aSpan[count].className += 'show';
+    count++;
+  },500);
+  var swiper = new Swiper('.swiper-container', {
+    loop:true,
+    autoplayDisableOnInteraction: false,
+    effect: 'cube',
+    grabCursor: true,
+    autoplay:2000,
+    cube: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94
+    }
+  });
+</script>
+</body>
+</html>
